@@ -1,0 +1,20 @@
+{
+  "name": "webservice",
+  "version": "1.0.0",
+  "description": "Simple Application Web API's",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Parvej Mallick",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "md5": "^2.2.1",
+    "mysql": "^2.15.0",
+    "pm2": "^2.10.4",
+    "socket.io": "^2.1.1"
+  }
+}
