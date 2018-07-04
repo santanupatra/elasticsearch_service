@@ -51,7 +51,7 @@ class Routes{
 			var existed = await this.db.query(`SELECT id, uuid, city_name FROM cities`);
 
 			if(existed[0]){
-				responsearr.students = existed;
+				responsearr.city = existed;
 				responsearr.ack = 1;
 				responsearr.message = `City Found.`;
 			}else{
@@ -68,7 +68,7 @@ class Routes{
 			var existed = await this.db.query(`SELECT id, uuid, province_name FROM provinces`);
 
 			if(existed[0]){
-				responsearr.students = existed;
+				responsearr.provinces = existed;
 				responsearr.ack = 1;
 				responsearr.message = `province Found.`;
 			}else{
@@ -85,7 +85,7 @@ class Routes{
 			var existed = await this.db.query(`SELECT id, uuid, locality_name FROM localities`);
 
 			if(existed[0]){
-				responsearr.students = existed;
+				responsearr.localities = existed;
 				responsearr.ack = 1;
 				responsearr.message = `locality Found.`;
 			}else{
@@ -136,7 +136,7 @@ class Routes{
 			var existed = await this.db.query(`SELECT DISTINCT B.id, B.business_name, C.category_name from business_table as B, categories as C, cities as CI, provinces as P, localities as L, barangays as BA where B.business_name like ?`+condition, filter);
 
 			if(existed[0]){
-				responsearr.students = existed;
+				responsearr.result = existed;
 				responsearr.ack = 1;
 				responsearr.message = `locality Found.`;
 			}else{
@@ -188,7 +188,7 @@ class Routes{
 			var existed = await this.db.query(`SELECT DISTINCT T.id, T.travel_name, C.category_name from travel_table as T, categories as C, cities as CI, provinces as P, localities as L, barangays as BA where T.travel_name like ?`+condition, filter);
 
 			if(existed[0]){
-				responsearr.students = existed;
+				responsearr.result = existed;
 				responsearr.ack = 1;
 				responsearr.message = `locality Found.`;
 			}else{
